@@ -1,13 +1,9 @@
 <template>
-    <LayoutDefault>
-        home page {{ $t('home.welcome') }}
-        <Button label="hello"></Button>
-    </LayoutDefault>
+    <LayoutDefault> home page </LayoutDefault>
 </template>
 
 <script lang="ts" setup>
-import Button from 'primevue/button'
-import LayoutDefault from '../../components/layouts/LayoutDefault.vue'
+import LayoutDefault from '../../components/layouts/default/index.vue'
 </script>
 
 <style></style>
