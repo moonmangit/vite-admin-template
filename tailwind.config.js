@@ -4,7 +4,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Prompt', 'sans-serif']
+                sans: ['Noto Sans Thai', 'sans-serif']
             }
         }
     },

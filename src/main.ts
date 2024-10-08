@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import en from './locales/en'
 import th from './locales/th'
+import { definePrimevue } from './libs/primevue'
 
 const app = createApp(App)
 // i18n
@@ -41,5 +42,7 @@ const router = createRouter({
     ],
     history: createWebHistory()
 })
+// primevue
+const { Primevue, config } = definePrimevue()
 
-app.use(router).use(i18n).mount('#app')
+app.use(Primevue, config).use(router).use(i18n).mount('#app')
