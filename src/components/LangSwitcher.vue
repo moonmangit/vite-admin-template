@@ -1,7 +1,5 @@
 <template>
-    <slot
-        v-bind="{ locales: $i18n.availableLocales, localeValue: $i18n.locale }"
-    >
+    <slot>
         <select v-model="$i18n.locale">
             <option v-for="lc in $i18n.availableLocales" :value="lc">
                 {{ lc }}
