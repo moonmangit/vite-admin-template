@@ -7,6 +7,7 @@ import App from './App.vue'
 import en from './locales/en'
 import th from './locales/th'
 import { definePrimevue } from './libs/primevue'
+import { createPinia } from 'pinia'
 
 const app = createApp(App)
 // i18n
@@ -42,7 +43,9 @@ const router = createRouter({
     ],
     history: createWebHistory()
 })
+// pinia
+const pinia = createPinia()
 // primevue
 const { Primevue, config } = definePrimevue()
 
-app.use(Primevue, config).use(router).use(i18n).mount('#app')
+app.use(pinia).use(Primevue, config).use(router).use(i18n).mount('#app')
