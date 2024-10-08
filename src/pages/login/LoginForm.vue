@@ -16,7 +16,11 @@
         </main>
         <footer class="flex justify-between">
             <Button label="Forget Password ?" link />
-            <Button label="Login" />
+            <Button label="Login" class="flex-row-reverse">
+                <template #icon>
+                    <Icon icon="ph:check" />
+                </template>
+            </Button>
         </footer>
     </form>
 </template>
@@ -24,6 +28,7 @@
 <script lang="ts" setup>
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
+import { Icon } from '@iconify/vue'
 </script>
 
 <style></style>
