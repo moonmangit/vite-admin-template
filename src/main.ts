@@ -15,6 +15,10 @@ const router = createAppRouter()
 // pinia
 const pinia = createPinia()
 // primevue
-const { Primevue, config } = definePrimevue()
+const { Primevue, config } = definePrimevue(app)
 
-app.use(pinia).use(Primevue, config).use(router).use(i18n).mount('#app')
+app.use(pinia)
+app.use(Primevue, config)
+app.use(router)
+app.use(i18n)
+app.mount('#app')

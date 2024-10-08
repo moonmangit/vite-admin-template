@@ -1,6 +1,9 @@
 import Primevue from 'primevue/config'
 import Aura from '@primevue/themes/aura'
 import { definePreset } from '@primevue/themes'
+import { App } from 'vue'
+import ToastService from 'primevue/toastservice'
+import ConfirmService from 'primevue/confirmationservice'
 
 const preset = definePreset(Aura, {
     semantic: {
@@ -20,7 +23,10 @@ const preset = definePreset(Aura, {
     }
 })
 
-export function definePrimevue() {
+export function definePrimevue(app: App) {
+    app.use(ToastService)
+    app.use(ConfirmService)
+
     return {
         Primevue,
         config: {
