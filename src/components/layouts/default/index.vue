@@ -5,7 +5,7 @@
     >
         <LayoutDefaultAside v-if="md" />
         <LayoutDefaultNavbar />
-        <main>
+        <main class="container mx-auto">
             <div class="min-h-[calc(100dvh-64px-2rem)] p-4">
                 <LayoutDefaultPageHeader />
 
