@@ -13,11 +13,11 @@ export const NAV_LINKS: NavItem[] = [
     },
     {
         groupLabel: 'content',
-        items: ['home', 'about', 'contact']
+        items: ['about', 'contact']
     },
     {
         groupLabel: 'settings',
-        items: ['home', 'about', 'contact']
+        items: ['about', 'contact']
     }
 ]
 

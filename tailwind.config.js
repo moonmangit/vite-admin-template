@@ -1,9 +1,21 @@
+const getColor = (colorVar, { opacityVariable, opacityValue }) => {
+    if (opacityValue !== undefined) {
+        return `rgb(var(${colorVar})/${opacityValue})`
+    }
+    if (opacityVariable !== undefined) {
+        return `rgb(var(${colorVar})/var(${opacityVariable}, 1))`
+    }
+
+    return `rgb(var(${colorVar}))`
+}
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     theme: {
         extend: {
             colors: {
+                external: (params) => getColor('--p-primary-500', params),
                 primary: {
                     50: 'var(--p-primary-50)',
                     100: 'var(--p-primary-100)',

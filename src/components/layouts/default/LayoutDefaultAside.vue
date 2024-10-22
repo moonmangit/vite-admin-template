@@ -51,6 +51,10 @@
                         v-for="(link, ldx) in group.items"
                         :key="ldx"
                         class="aside-group__link"
+                        :class="{
+                            active:
+                                $route.path === routerConfig[link].router.path
+                        }"
                     >
                         <Icon
                             :icon="routerConfig[link].app.icon"
@@ -66,7 +70,7 @@
 
         <button
             type="button"
-            class="w-8 h-8 aspect-auto flex items-center justify-center border rounded-full absolute bottom-8 -right-4 bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-white dark:hover:text-black dark:border-white/20 duration-200"
+            class="w-8 h-8 aspect-auto flex items-center justify-center border rounded-full absolute bottom-8 -right-4 bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-white dark:hover:text-black dark:border-white/20 duration-200 bg-external-300/10"
             @click.prevent="layoutStore.toggleMinimize()"
         >
             <Icon
@@ -100,6 +104,9 @@ const links = NAV_LINKS
     @apply flex items-center gap-x-2 duration-200 cursor-pointer rounded-lg;
     &:hover {
         @apply bg-gray-100 dark:bg-white dark:text-black;
+    }
+    &.active {
+        @apply bg-primary-500 text-black;
     }
 }
 
